@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <math.h>
+#include <iso646.h>
+
+
+int main(){
+    setlocale(LC_ALL, "Rus");
+    float x,n;
+    printf("Введите значение x: ");
+    scanf ("%f", &x);
+    printf("Введите значение n: ");
+    scanf ("%f", &n);
+    float e=2.72;
+    
+    
+    
+    
+
+    return 0;
+}
