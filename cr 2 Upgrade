@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <math.h>
+
+int factorial(int n);
+
+
+int main(){
+    setlocale(LC_ALL, "Russian");
+    double toch = 0, x = 0, sum = 0, E = 0, n = 0;
+    printf("Введите точность если (1 < точность  < 0) i не меньше чем 0.000001\n");              //введение точности 
+    scanf("%lf", &toch);
+    if(1 < toch || toch < 0)                                                                     //проверка на точность 
+    {
+        printf("Точность введена не верно ");
+        return 0;
+    }
+    
+    
+    printf("Введите x\n");                                                                       //ввод икса                                                                
+    scanf("%lf", &x);
+
+    for(int i=0;i<=n;i++){                                                                           //тут будет формула           
+        sum +=
+    }
+    
+}
