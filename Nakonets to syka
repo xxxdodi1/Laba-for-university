@@ -8,12 +8,13 @@ float factorial(float j){
     int i;
     for(i=1;i<=j;i++){
         add=add*i;
-        return add;
+        
     }
+    return add;
 }
 
 int main() {
-    float x,eps,n=1,l=0;
+    float x,eps,n=0,l=0;
     printf ("Input x-");
     scanf  ("%f",&x);
     printf ("Input eps-");
@@ -22,14 +23,14 @@ int main() {
         printf("Input other eps-");
         scanf ("%f",&eps);
     }else {
-            while(pow(x,n)/factorial (n)>eps){
+            while(((pow(x,n))/factorial (n))>eps){
                 l=l+(pow(x,n)/factorial (n));
                 n=n+1;
             } 
         
     }
     printf ("my e^x=%f\n",l);
-    printf ("normal e^x=%f",(exp(pow((x),1))));
+    printf ("normal e^x=%f",(exp (x)));
     
     
     return 0;
@@ -49,7 +50,7 @@ float factorial(float j){
 }
 
 int main() {
-    float x,eps,n=1,l=0;
+    float x,eps,n=0,l=0;
     printf ("Input x-");
     scanf  ("%f",&x);
     printf ("Input eps-");
