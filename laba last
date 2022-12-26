@@ -1,4 +1,62 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <math.h>
+#include <locale.h>
+#include <time.h>
+#include <ctype.h>
+
+
+
+int check1(void) {
+    int k = 0;
+    char c[100], p, q[100] = "";
+    do {
+    scanf("%s", c);
+    for (int i = 0; i < strlen(c); i++) {
+    p = c[i];
+    if (isdigit(p) == 0) {
+    puts("неверные данные, введите другое число:");
+    continue;
+    }
+    else
+    strncat(q, &p, 1);
+    k += 1;
+    }
+    if (k < strlen(c)) {
+    k = 0;
+    strcpy(q, "");
+    }
+    } while (k < 1);
+    int num;
+    num = atoi(q);
+    return num;
+}
+int check2(void) {
+    int k = 0;
+    char c[100], p, q[100] = "";
+    do {
+    scanf("%s", c);
+    for (int i = 0; i < strlen(c); i++) {
+    p = c[i];
+    if (isdigit(p) == 0 && p!= '-' && p!='.' && p!=',') {
+    puts("неверные данные, введите другое число:");
+    continue;
+    }
+    else
+    strncat(q, &p, 1);
+    k += 1;
+    }
+    if (k < strlen(c)) {
+    k = 0;
+    strcpy(q, "");
+    }
+    } while (k < 1);
+    int num;
+    num = atoi(q);
+    return num;
+}
+
 
 void Sort(int* array, int n){
      int temp = 0;
@@ -96,14 +154,16 @@ int main()
 {
     int n;
     printf("Vvedite razmernost' massiva\n");
-    scanf("%d",&n);
+    //scanf("%d",&n);
+    n = check1();
+    
+   
+    
     int array[n];
     
-    for (int i = 0; i < n; i++)
-    {
+    for (int i = 0; i < n; i++){
     printf("array[]=");
-    scanf("%d", &array[i]);
-
+    array[i]=check2();
 }
 
 multElAr(array, n);
