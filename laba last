@@ -1,0 +1,115 @@
+#include <stdio.h>
+
+void Sort(int* array, int n){
+     int temp = 0;
+    for(int i = 1; i < n; ++i)
+	{
+		for(int r = 0; r < n-i; r++)
+		{
+			if(array[r] < array[r+1])
+			{
+				// Обмен местами
+				int temp = array[r];
+				array[r] = array[r+1];
+				array[r+1] = temp;
+			}
+		}
+	}
+    printf("\nОтсортированный массив: ");
+	for(int i = 0; i < n; ++i)
+	{
+		printf("%d ",array[i]);
+	}
+	printf("\n");
+     
+}
+
+
+
+
+void otlichie(int* array, int n) {
+    int j = 0;
+    for (int i = 0; i < n; i++) {
+    if (array[i] != array[n - 1])
+    j++;
+    }
+    printf("\nкол во элементов отличных от последнего %d", j);
+    }
+    void SumPositive(int* array, int n) {
+    int s = 0;
+    for (int i = 0; i < n; i++)
+    {
+    if (array[i] > 0) s += array[i];
+    }
+    printf("Сумма положительных элементов равна=%d", s);
+}
+
+
+int indMaxEl(int* array, int n) {
+    int max = array[0], index = 0;
+    for (int i = 0; i < n; i++)
+    {
+    if (array[i] > max) {
+    max = array[i];
+    index = i;
+    }
+}
+return index;
+}
+
+int indMinEl(int* array, int n) {
+    int min = array[0], index = 0;
+        for (int i = 0; i < n; i++)
+        {
+        if (array[i] < min) {
+        min = array[i];
+        index = i;
+    }
+}
+return index;
+}
+
+void multElAr(int* array, int n) {
+    int m = 1;
+    int indexMax = indMaxEl(array, n);
+    int indexMin = indMinEl(array, n);
+
+if (indexMin < indexMax) {
+    for (int i = indexMin; i <= indexMax; i++)
+    {
+    m *= array[i];
+    }
+    printf("Произведение элементов между минимальным и максимальным элементами: %d\n", m);
+    }
+    else if (indexMin > indexMax) {
+        for (int i = indexMax; i <= indexMin; i++)
+        {
+        m *= array[i];
+        }
+        printf("Произведение элементов между минимальным и максимальным элементами: %d\n", m);
+        }
+        else
+    printf("Максимальный и минимальный элементы совпадают\n");
+    }
+
+int main()
+{
+    int n;
+    printf("Vvedite razmernost' massiva\n");
+    scanf("%d",&n);
+    int array[n];
+    
+    for (int i = 0; i < n; i++)
+    {
+    printf("array[]=");
+    scanf("%d", &array[i]);
+
+}
+
+multElAr(array, n);
+SumPositive(array, n);
+otlichie(array, n);
+Sort(array, n);
+
+
+}
