@@ -120,7 +120,7 @@ int main() {
 #include <stdio.h>
  
  
-#define  DAYS 5
+#define  DAYS 6
  
 typedef struct
 {
@@ -187,9 +187,9 @@ int main(void)
  
         for(i = 0; i < numEntries; i++)
         {
-            fscanf(f,"%s %d %d %d %d %d\n",
+            fscanf(f,"%s %d %d %d %d %d %d\n",
                    arr[i].name, &arr[i].details[0], &arr[i].details[1],
-                    &arr[i].details[2],&arr[i].details[3], &arr[i].details[4]);
+                    &arr[i].details[2],&arr[i].details[3], &arr[i].details[4],&arr[i].details[5]);
         }
  
         PrintWithCondition(arr, numEntries);
@@ -198,7 +198,6 @@ int main(void)
         fclose(f);
     }
 }
-
 
 Williams  0 2 6 7 10 
 Peters  20 0 2 6 8 
